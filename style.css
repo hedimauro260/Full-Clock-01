@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: #fff;
+}
+
+.container{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/**Analog Clock**/
+.container .analog{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .analog .clock_analog{
+    width: 60%;
+    height: 60%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+/**Ponteiros**/
+.container .analog .clock_analog .hour_analog, .min_analog, .second_analog{
+    position: absolute;
+    bottom: 50%;
+    background-color: #fff;
+    border-radius: .1rem;
+    transform-origin: bottom;
+}
+.container .analog .clock_analog .hour_analog{
+    width: .4rem;
+    height: 25%;
+    background-color: #fff;
+    z-index: 1;
+}
+.container .analog .clock_analog .min_analog{
+    width: .3rem;
+    height: 35%;
+    background-color: #fff;
+    z-index: 2;
+}
+.container .analog .clock_analog .second_analog{
+    width: .2rem;
+    height: 40%;
+    background-color: rgb(85, 84, 84);
+    z-index: 3;
+}
+.container .analog .clock_analog::after{
+    width: .8rem;
+    height: .8rem;
+    position: absolute;
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    z-index: 4;
+}
+/**marks**/
+.container .analog .clock_analog .mark{
+    width: .2rem;
+    height: 100%;
+    position: absolute;
+}
+.container .analog .clock_analog .mark::before{
+    width: .2rem;
+    height: 1.6rem;
+    position: absolute;
+    content: "";
+    background-color: #000;
+    border: .1rem solid #fff;
+    border-bottom: 1px solid #000;
+}
+
+
+/**Digital Clock**/
+.container .digital{
+    width: 50%;
+    height: 100%;
+}
+/**Local**/
+.container .digital .local{
+    width: 100%;
+    height: 20%;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 2.1em;
+    font-weight: normal;
+}
+
+/**Hour, Minute, Second**/
+.container .digital .clock_digital{
+    width: 100%;
+    height: 60%;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;   
+    gap: 0.5rem;
+}
+.container .digital .clock_digital .hour_digital, .min_digital, .spacer{
+    font-size: 11.1em;
+    font-weight: normal;
+    color: #fff;
+    font-family: "Orbitron", sans-serif;
+}
+.container .digital .clock_digital .second_digital{
+    padding-left: 1rem;
+    margin-bottom: 4rem;
+    display: flex;
+    align-self: flex-end;
+    font-family: "Orbitron", sans-serif;
+    font-size: 5.1em;
+    font-weight: normal;
+    color: rgb(85, 84, 84);
+}
+/**Date**/
+.container .digital .date{
+    width: 100%;
+    height: 20%;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 2.1em;
+    font-weight: normal;
+}
+.container .digital .date .day_week{
+    font-weight: 700;
+}
+.container .digital .date .day{
+    padding-left: 1rem;
+}
